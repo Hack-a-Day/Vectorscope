@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 5:39:48 PM On 10/20/2023
+
+Output: Pick Place
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [vectorscope.CSPcbDoc]
+   Generated File[Pick Place for vectorscope.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 5:39:49 PM On 10/20/2023

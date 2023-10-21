@@ -1,0 +1,65 @@
+Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
+
+SW13       JOYSTICK_2          1056.9mil    674.878mil       1057mil        675mil   1014.741mil    983.054mil  T        315.00 Comment        
+R12        TANTALUM_KEMET_C     3208.5mil        534mil       3238mil        534mil       3179mil        534mil  B        180.00 2K7            
+R13        TANTALUM_KEMET_C     3061.5mil        533mil       3032mil        533mil       3091mil        533mil  B        360.00 2K7            
+T1         SOT-23              2477.5mil       2501mil       2440mil       2541mil       2440mil       2541mil  B        360.00 DMN65D8L-7     
+C16        TANTALUM_KEMET_C     3207.5mil        945mil       3178mil        945mil       3237mil        945mil  B        360.00 2u2            
+U3         TQFN24              2904.5mil     2141.5mil       2903mil       2142mil       2795mil       2129mil  B        360.00 TLC59283       
+R7         TANTALUM_KEMET_C     3061.5mil        696mil       3032mil        696mil       3091mil        696mil  B        360.00 4K7            
+R6         TANTALUM_KEMET_C     3062.5mil        779mil       3092mil        779mil       3033mil        779mil  B        180.00 4K7            
+R5         TANTALUM_KEMET_C     3062.5mil        861mil       3092mil        861mil       3033mil        861mil  B        180.00 4K7            
+R2         TANTALUM_KEMET_C   2894.083mil   1876.339mil   2923.583mil   1876.339mil   2864.583mil   1876.339mil  B        180.00 2K7            
+R1         TANTALUM_KEMET_C   2755.224mil   1876.339mil   2784.724mil   1876.339mil   2725.724mil   1876.339mil  B        180.00 22R            
+C6         TANTALUM_KEMET_C     1483.5mil        731mil       1513mil        731mil       1454mil        731mil  B        180.00 2u2            
+L1         0805                  2804mil        617mil       2849mil        617mil       2759mil        617mil  B        180.00 100nF          
+C1         Tantal            3184.441mil   1932.803mil   3186.441mil   1932.851mil   3184.441mil   2014.456mil  B         90.00 22uF           
+C2         Tantal            2532.858mil        616mil   2532.905mil        614mil   2614.511mil        616mil  B        360.00 22uF           
+R3         TANTALUM_KEMET_C     3208.5mil        779mil       3238mil        779mil       3179mil        779mil  B        180.00 47K            
+C14        TANTALUM_KEMET_C     3208.5mil        696mil       3238mil        696mil       3179mil        696mil  B        180.00 100nF          
+C15        TANTALUM_KEMET_C     3062.5mil        944mil       3092mil        944mil       3033mil        944mil  B        180.00 2u2            
+R4         TANTALUM_KEMET_C     3208.5mil        861mil       3238mil        861mil       3179mil        861mil  B        180.00 22K            
+C9         TANTALUM_KEMET_C   1606.185mil        287mil   1635.685mil        287mil   1576.685mil        287mil  B        180.00 2u2            
+C4         TANTALUM_KEMET_C     1225.5mil        731mil       1255mil        731mil       1196mil        731mil  B        180.00 100nF          
+R8         TANTALUM_KEMET_C     1143.5mil        287mil       1114mil        287mil       1173mil        287mil  B        360.00 82R            
+C10        TANTALUM_KEMET_C     1476.5mil        287mil       1447mil        287mil       1506mil        287mil  B        360.00 100nF          
+C7         TANTALUM_KEMET_C     1607.5mil        374mil       1578mil        374mil       1637mil        374mil  B        360.00 2u2            
+C5         TANTALUM_KEMET_C     1354.5mil        731mil       1384mil        731mil       1325mil        731mil  B        180.00 2u2            
+C3         TANTALUM_KEMET_C   3032.941mil   1876.339mil   3062.441mil   1876.339mil   3003.441mil   1876.339mil  B        180.00 100nF          
+SW1        key4p             2862.142mil    929.725mil   2862.142mil    929.724mil   2773.559mil   1087.205mil  T        270.00 tactile key    
+SW2        key4p             2381.142mil    929.725mil   2381.142mil    929.724mil   2292.559mil   1087.205mil  T        270.00 tactile key    
+U1         AK4619            1366.043mil    503.606mil       1297mil        604mil   1265.504mil    434.709mil  B        360.00 AK4619         
+U4         MSOP8               3138.5mil     1142.5mil       3048mil       1180mil       3229mil       1180mil  B        180.00 TPA321         
+M1         PICO              1486.016mil   1841.731mil   1481.016mil   1841.339mil   1886.016mil   2791.731mil  B        270.00 PICO           
+SW12       key_12x12_SMD     1099.016mil   1656.338mil   1099.016mil   1656.339mil    999.016mil   1383.838mil  T        360.00 Comment        
+SW11       key_12x12_SMD     1099.016mil   2391.338mil   1099.016mil   2391.338mil    999.016mil   2118.838mil  T        360.00 Comment        
+SW10       key_12x12_SMD     3444.016mil    832.338mil   3444.016mil    832.338mil   3344.016mil    559.838mil  T        360.00 Comment        
+LY2        LED0603            384.016mil    657.338mil    384.016mil    657.338mil    384.016mil    616.338mil  T        270.00                
+LY1        LED0603            244.016mil    655.338mil    244.016mil    655.338mil    244.016mil    614.338mil  T        270.00                
+LY7        LED0603            579.016mil   2365.338mil    579.016mil   2365.338mil    579.016mil   2324.338mil  T        270.00                
+LY5        LED0603            579.016mil   1760.339mil    579.016mil   1760.339mil    579.016mil   1719.339mil  T        270.00                
+LY3        LED0603            579.016mil   1545.339mil    579.016mil   1545.339mil    579.016mil   1504.339mil  T        270.00                
+LY4        LED0603            719.016mil   1547.339mil    719.016mil   1547.339mil    719.016mil   1506.339mil  T        270.00                
+LY6        LED0603            719.016mil   1762.339mil    719.016mil   1762.339mil    719.016mil   1721.339mil  T        270.00                
+LY8        LED0603            719.016mil   2367.338mil    719.016mil   2367.338mil    719.016mil   2326.338mil  T        270.00                
+SW9        key4p              304.016mil    976.339mil    304.016mil    976.338mil    215.433mil   1133.819mil  T        270.00 tactile key    
+SW7        key4p              304.016mil   2371.339mil    304.016mil   2371.338mil    215.433mil   2528.819mil  T        270.00 tactile key    
+SW8        key4p              304.016mil   1646.339mil    304.016mil   1646.339mil    215.433mil   1803.819mil  T        270.00 tactile key    
+SW5        key4p             1771.142mil   1416.339mil   1771.142mil   1416.339mil   1682.559mil   1573.819mil  T        270.00 tactile key    
+SW6        key4p                 1772mil    927.001mil       1772mil        927mil   1683.417mil   1084.481mil  T        270.00 tactile key    
+SW4        key4p             1771.142mil   1903.339mil   1771.142mil   1903.339mil   1682.559mil   2060.819mil  T        270.00 tactile key    
+SW3        key4p                 1771mil   2388.001mil       1771mil       2388mil   1682.417mil   2545.481mil  T        270.00 tactile key    
+ZD1        SOT-23              1142.5mil        411mil       1105mil        451mil       1105mil        451mil  B        360.00 LM4040         
+U2         TSSOP_14            2023.5mil        619mil       2022mil        619mil       2133mil        694mil  B        180.00 LMV324         
+C13        TANTALUM_KEMET_C     2259.5mil        578mil       2289mil        578mil       2230mil        578mil  B        180.00 100nF          
+C12        TANTALUM_KEMET_C     2259.5mil        655mil       2289mil        655mil       2230mil        655mil  B        180.00 2u2            
+C18        TANTALUM_KEMET_C     1691.5mil        645mil       1721mil        645mil       1662mil        645mil  B        180.00 100nF          
+C19        TANTALUM_KEMET_C     1648.5mil        559mil       1678mil        559mil       1619mil        559mil  B        180.00 100nF          
+C20        TANTALUM_KEMET_C     1608.5mil        458mil       1638mil        458mil       1579mil        458mil  B        180.00 100nF          
+C8         TANTALUM_KEMET_C     1734.5mil        287mil       1705mil        287mil       1764mil        287mil  B        360.00 2u2            
+C17        TANTALUM_KEMET_C     1691.5mil        726mil       1721mil        726mil       1662mil        726mil  B        180.00 100nF          
+C11        TANTALUM_KEMET_C     1346.5mil        287mil       1317mil        287mil       1376mil        287mil  B        360.00 100nF          
+R10        TANTALUM_KEMET_C     3188.5mil       1618mil       3218mil       1618mil       3159mil       1618mil  B        180.00 330R           
+R9         TANTALUM_KEMET_C     3188.5mil       1526mil       3218mil       1526mil       3159mil       1526mil  B        180.00 330R           
+R11        TANTALUM_KEMET_C     3188.5mil       1710mil       3159mil       1710mil       3218mil       1710mil  B        360.00 330R           
+

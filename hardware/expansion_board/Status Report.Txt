@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 10:49:52 PM On 10/1/2023
+
+Output: Pick Place
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [VectorScope Expansion.CSPcbDoc]
+   Generated File[Pick Place for VectorScope Expansion.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 10:49:52 PM On 10/1/2023

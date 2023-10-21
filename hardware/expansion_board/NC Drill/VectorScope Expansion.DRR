@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: VectorScope Expansion.CSPcbDoc   10/1/2023  10:49:49 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : VectorScope Expansion.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        30mil (0.762mm)          Round          979              121.03 Inch (3074.19 mm)
+T2        40mil (1.016mm)          Round          21               3.22 Inch (81.67 mm)
+T3        125mil (3.175mm)         Round          1                0.00 Inch (0.00 mm)
+T4        300mil (7.62mm)          Round          1                0.00 Inch (0.00 mm)
+---------------------------------------------------------------------------
+Totals                                            1002             124.25 Inch (3155.86 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:01

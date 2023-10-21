@@ -1,0 +1,142 @@
+*************************************************************
+FileName = VectorScope Expansion.CSPcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\matrix\matrix
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\profile
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\topoverlay\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\topoverlay\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\toppaste\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\toppaste\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\topsolder\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\topsolder\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottomsolder\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottomsolder\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottompaste\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottompaste\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottomoverlay\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\bottomoverlay\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\keepout\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\keepout\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Outline\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Outline\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\mechanical3\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\mechanical3\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Text Top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Text Top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Text Bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Text Bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Assembly Bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Dimensions Top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Dimensions Top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Dimensions Bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Dimensions Bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\3D Top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\3D Top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\3D Bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\3D Bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Courtyard Top\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Courtyard Top\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Courtyard Bottom\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\steps\pcb\layers\Courtyard Bottom\attrlist
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x69.3_17\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x69.3_163\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x45.4523_321\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect7.2x3.2608_321\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_321\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_39\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect7.2x3.2608_39\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x45.4523_39\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x42.2564_28\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect2.7882x2.2989_39\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_296\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_244\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect2.7882x2.2989_141\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x42.2564_152\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x45.4523_219\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect7.2x3.2608_219\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_219\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect3.6309x2.79_141\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect7.2x3.2608_141\features
+
+Generated File : C:\Users\Voja\Desktop\Badge VectorScope\VectorScope\Default Configuration\Outputs\ODB\odb\symbols\rect11.6x45.4523_141\features
+

@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: vectorscope.CSPcbDoc   10/20/2023  5:39:46 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : vectorscope.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        15mil (0.381mm)          Round          213              31.93 Inch (810.97 mm)
+T2        35mil (0.889mm)          Round          4                8.54 Inch (216.94 mm)
+T3        40mil (1.016mm)          Round          8                7.14 Inch (181.28 mm)
+T4        44mil (1.1176mm)         Round          20               2.18 Inch (55.35 mm)
+T5        60mil (1.524mm)          Round          3                0.91 Inch (23.10 mm)
+T6        125mil (3.175mm)         Round          1                0.00 Inch (0.00 mm)
+T7        300mil (7.62mm)          Round          2                2.34 Inch (59.31 mm)
+---------------------------------------------------------------------------
+Totals                                            251              53.03 Inch (1346.96 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
