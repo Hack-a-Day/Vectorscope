@@ -1,3 +1,3 @@
 # Vectorscope
 
-![Tek 515A](inspiration/tek_515A.jpg?raw=true)
+![Vectorscope](inspiration/DSC_0146_featured.png?raw=true)

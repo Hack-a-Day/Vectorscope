@@ -5,4 +5,4 @@ We'd been thinking of doing something analog this year, because we've been heavi
 Finally, [Schneider] showed us the prototypes for the [flow3r badge for this summer's Chaos Camp](https://flow3r.garden/) in [Berlin](https://hackaday.com/2023/03/27/hackaday-berlin-was-bonkers/), and we needed to make a vintage round-screen scope.  Besides, we'd been looking for an excuse to try out those round screens since seeing [Scott Bezek]'s [SmartKnob](https://github.com/scottbez1/smartknob).  How could we resist?
 
 
-![Tek 515A](inspiration/tek_515A.jpg?raw=true)
+![Tek 515A](tek_515A.jpg?raw=true)
