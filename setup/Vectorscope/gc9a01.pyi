@@ -118,9 +118,9 @@ class GC9A01:
         Returns the width of the string in pixels if printed in the specified font.
         """
         ...
-    def draw(self, vector_font, s: str, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
+    def draw(self, vector_font, s: str, x: int, y: int, color: int, scale: Optional[float] = 1.0) -> None:
         """
-        Draw text to the display using the specified hershey vector font with the coordinates as the lower-left corner of the text. The foreground and background colors of the text can be set by the optional arguments fg and bg, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`. See the `README.md` in the `vector/fonts` directory for example fonts and the utils directory for a font conversion program.
+        Draw text to the display using the specified hershey vector font with the coordinates as the lower-left corner of the text. The color of the text is controlled by color and the optional argument scale, can be used to make the font larger or smaller. See the `README.md` in the `vector/fonts` directory for example fonts and the utils directory for a font conversion program.
         """
         ...
     def jpg(self, jpg_filename: str, x: int, y:int, method: Optional[int] = FAST) -> None:
