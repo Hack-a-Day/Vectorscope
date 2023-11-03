@@ -15,11 +15,11 @@ def text_overlay():
     screen.text(85,190,"2023")
 
 def back(key):
-    screen.jpg("bluemarble.jpg")   # button A globe
+    screen.jpg("pl_earth.jpg")   # button A globe
     text_overlay()
     
 def fwd(key):
-    screen.jpg("wrencher.jpg")      # button B wrencher
+    screen.jpg("splash_wrencher.jpg")      # button B wrencher
     text_overlay()
     
 def menu(key):						# menu -bail out
