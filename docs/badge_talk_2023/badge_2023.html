@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="supercon-2023-the-vectorscope-badge" class="titleslide slide level1"><h1>Supercon 2023: The Vectorscope Badge</h1></section></section>
+<section><section id="overview" class="titleslide slide level1"><h1>Overview</h1></section><section id="the-badge" class="slide level2">
+<h2>The Badge</h2>
+<ul>
+<li class="fragment"><p>What is It?</p></li>
+<li class="fragment"><p>How Does it Work?</p></li>
+<li class="fragment"><p>Can I Hack It?</p></li>
+</ul>
+</section><section id="inspiration-analog" class="slide level2">
+<h2>Inspiration: Analog</h2>
+<figure>
+<img src="images/tek_515A.jpg" height="500" />
+</figure>
+</section><section id="one-badge-two-parts" class="slide level2">
+<h2>One Badge, Two Parts</h2>
+<ul>
+<li class="fragment"><p>Vectorscope: 30 kHz “scope”</p></li>
+<li class="fragment"><p>Signal Generator: Driven by code</p></li>
+<li class="fragment"><p>X/Y outputs, X/Y inputs (0 V - 3 V)</p></li>
+</ul>
+</section><section id="vectorscope" class="slide level2">
+<h2>Vectorscope</h2>
+<ul>
+<li class="fragment"><p>Fake phosphor display</p></li>
+<li class="fragment"><p>“No User-Serviceable Parts Inside”</p></li>
+<li class="fragment"><p>AK4619 Codec chip (<code>codec.py</code>)</p></li>
+<li class="fragment"><p>ADC in, 16 frames of 1024 samples (16-bit X/Y)</p></li>
+<li class="fragment"><p>Insane DMA/PIO Machine (<code>pixel_pusher.py</code>)</p></li>
+<li class="fragment"><p>Twelve lines of user-space code (<code>vectorscope.phosphor()</code>)</p></li>
+</ul>
+</section><section id="signal-generator" class="slide level2">
+<h2>Signal Generator</h2>
+<ul>
+<li class="fragment"><p>DAC out</p></li>
+<li class="fragment"><p>Limitations: 30 kHz, ringy filter, one CPU core</p></li>
+<li class="fragment"><p>X/Y buffers, 256 points @ 16 bits, interleaved and pushed out</p></li>
+<li class="fragment"><p>This is your playground (<code>waveform.py</code>)</p></li>
+</ul>
+</section><section id="signal-generator-api" class="slide level2">
+<h2>Signal Generator “API”</h2>
+<ul>
+<li class="fragment"><p><code>v.wave.point(x,y)</code></p></li>
+<li class="fragment"><p><code>v.wave.packX(list)</code>, <code>v.wave.packY(list)</code></p></li>
+<li class="fragment"><p><code>v.wave.outBuffer_ready</code>:</p></li>
+<li class="fragment"><p>write False, wait till True</p></li>
+</ul>
+</section><section id="operating-system" class="slide level2">
+<h2>Operating System</h2>
+<ul>
+<li class="fragment"><p>Vectoros!</p></li>
+<li class="fragment"><p>Runs menu system</p></li>
+<li class="fragment"><p>Buttons and LEDs</p></li>
+<li class="fragment"><p>Uses <code>asyncio</code>: define functions <code>async</code> and be sure to yield</p></li>
+<li class="fragment"><p>Lets you map your code to <code>A/B/C/D.py</code></p></li>
+</ul>
+</section><section id="micropython" class="slide level2">
+<h2>Micropython</h2>
+<ul>
+<li class="fragment"><p>Why Micropython?</p></li>
+<li class="fragment"><p>Interactive REPL to control vectorscope is awesome</p></li>
+<li class="fragment"><p>Two cores: one just for you</p></li>
+<li class="fragment"><p>Filesystem</p></li>
+<li class="fragment"><p>Secret trick: Hold down the [User] Button on boot</p></li>
+</ul>
+</section><section id="creature-comforts" class="slide level2">
+<h2>Creature Comforts</h2>
+<ul>
+<li class="fragment"><p>Thonny IDE: configure to use badge, done</p></li>
+<li class="fragment"><p>mpremote: for the CLI aficionado</p></li>
+<li class="fragment"><p><code>mp run file.py</code>, <code>mp cp *.py :</code>, <code>mp mount .</code></p></li>
+<li class="fragment"><p><code>picotool save -a your_image.uf2</code></p></li>
+<li class="fragment"><p>VS Code stubs</p></li>
+</ul>
+</section><section id="many-ways-to-play" class="slide level2">
+<h2>Many Ways to Play</h2>
+<ul>
+<li class="fragment"><p>Use <code>vectorscope.wave</code>, funny graphics and/or sounds</p></li>
+<li class="fragment"><p>Go analog!</p></li>
+<li class="fragment"><p>Tweak vectorscope</p></li>
+<li class="fragment"><p>Don’t use vectorscope: GC9A01_mpy library compiled in</p></li>
+<li class="fragment"><p>Blow Micropython away and start from scratch (but: codec, screen, keys)</p></li>
+</ul>
+</section></section>
+<section><section id="under-the-hood" class="titleslide slide level1"><h1>Under the Hood</h1></section><section id="credits" class="slide level2">
+<h2>Credits</h2>
+<ul>
+<li class="fragment"><p>Hackaday Team: Elliot and Al and Tom</p></li>
+<li class="fragment"><p>Voja Antonic</p></li>
+<li class="fragment"><p>Design Lab: Giovanni, Majenta, Bruce, Keno, and Team</p></li>
+</ul>
+</section><section id="tales-of-woe" class="slide level2">
+<h2>Tales of Woe</h2>
+<figure>
+<img src="images/image2.png" height="500" />
+</figure>
+</section><section id="powers-of-ten" class="slide level2">
+<h2>Powers of Ten</h2>
+<figure>
+<img src="images/badger01.png" height="500" />
+</figure>
+</section><section id="ms" class="slide level2">
+<h2>10 ms</h2>
+<figure>
+<img src="images/badger06.png" height="500" />
+</figure>
+</section><section id="ms-1" class="slide level2">
+<h2>1 ms</h2>
+<figure>
+<img src="images/badger07.png" height="500" />
+</figure>
+</section><section id="us" class="slide level2">
+<h2>100 us</h2>
+<figure>
+<img src="images/badger08.png" height="500" />
+</figure>
+</section><section id="us-1" class="slide level2">
+<h2>10 us</h2>
+<figure>
+<img src="images/badger09.png" height="500" />
+</figure>
+</section><section id="us-2" class="slide level2">
+<h2>1 us</h2>
+<figure>
+<img src="images/badger10.png" height="500" />
+</figure>
+</section><section id="ns" class="slide level2">
+<h2>100 ns</h2>
+<figure>
+<img src="images/badger11.png" height="500" />
+</figure>
+</section><section id="ns-1" class="slide level2">
+<h2>10 ns</h2>
+<figure>
+<img src="images/badger12.png" height="500" />
+</figure>
+</section><section id="ns-2" class="slide level2">
+<h2>1 ns</h2>
+<figure>
+<img src="images/badger13.png" height="500" />
+</figure>
+</section><section id="the-dmapio-machine" class="slide level2">
+<h2>The DMA/PIO Machine</h2>
+<ul>
+<li class="fragment"><p>DMA reads from one location to another</p></li>
+<li class="fragment"><p>DMA and memory is Turing complete</p></li>
+<li class="fragment"><p>DMA counter</p></li>
+</ul>
+</section><section id="pixel-pusher" class="slide level2">
+<h2>Pixel Pusher</h2>
+<figure>
+<img src="images/overview.png" height="500" />
+</figure>
+</section></section>
+<section><section id="badgers" class="titleslide slide level1"><h1>Badgers!</h1></section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
