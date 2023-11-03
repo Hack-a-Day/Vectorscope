@@ -37,6 +37,7 @@ slides=[
         [ IMAGE, "pl_saturn.jpg" ],
         [ IMAGE, "pl_uranus.jpg" ],
         [ IMAGE, "pl_neptune.jpg" ],
+        [ IMAGE, "pl_pluto.jpg" ],
        ]
 
 # get next slide
