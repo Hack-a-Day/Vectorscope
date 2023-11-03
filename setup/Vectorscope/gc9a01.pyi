@@ -4,7 +4,7 @@ Object and functions for GC9A01 screen
 MicroPython module: https://github.com/russhughes/gc9a01_mpy
 """
 from _typeshed import Incomplete, Incomplete as Incomplete
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, List, Optional, Tuple, Union, overload
 from machine import Pin, SPI
 
 FAST: int
@@ -56,6 +56,21 @@ class GC9A01:
         Send initialization to the display.
         """
         ...
+    def hard_reset(self) -> None:
+        """
+        Performs a hard reset of the display
+        """
+        ...
+    def soft_reset(self) -> None:
+        """
+        Performs a soft reset of the display
+        """
+        ...
+    def sleep_mode(self, sleep: bool) -> None:
+        """
+        Changes in and out of sleepmode
+        """
+        ...
     def on(self) -> None:
         """
         Turn on the backlight pin if one was defined during init.
@@ -64,6 +79,20 @@ class GC9A01:
     def off(self) -> None:
         """
         Turn off the backlight pin if one was defined during init.
+        """
+        ...
+    def set_window(self, x0: int, x1: int, y0: int, y1: int) -> None:
+        """
+        Set window to column and row address.
+        - `x0` column start address
+        - `x1` column end address
+        - `y0` row start address
+        - `y1` row end address
+        """
+        ...
+    def inversion_mode(self, inverted: bool) -> None:
+        """
+        Changes inverted mode on and off
         """
         ...
     def pixel(self, x: int, y: int, color: int) -> None:
@@ -91,6 +120,11 @@ class GC9A01:
         Draws a rectangle from (`x`, `y`) with corresponding dimensions
         """
         ...
+    def fill(self, color: int) -> None:
+        """
+        Fill the display with given `color`
+        """
+        ...
     def fill_rect(self, x: int, y: int, width: int, height: int, color: int) -> None:
         """
         Fill a rectangle starting from (`x`, `y`) coordinates
@@ -101,26 +135,56 @@ class GC9A01:
         Copy bytes() or bytearray() content to the screen internal memory. Note: every color requires 2 bytes in the array
         """
         ...
-    def text(self, font, s: int, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
+    @overload
+    def text(self, font, s: str, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
         """
         Write text to the display using the specified bitmap font with the coordinates as the upper-left corner of the text. The foreground and background colors of the text can be set by the optional arguments fg and bg, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`. See the `README.md` in the `fonts/bitmap` directory for example fonts.
         """
         ...
-    def write(self, bitap_font, s: int, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
+    @overload
+    def text(self, font, s: int, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
+        """
+        Write single character to the display using the specified bitmap font with the coordinates as the upper-left corner of the text. The foreground and background colors of the text can be set by the optional arguments fg and bg, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`. See the `README.md` in the `fonts/bitmap` directory for example fonts.
+        """
+        ...
+    @overload
+    def write(self, bitap_font, s: str, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
         """
         Write text to the display using the specified proportional or Monospace bitmap font module with the coordinates as the upper-left corner of the text. The foreground and background colors of the text can be set by the optional arguments fg and bg, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`. See the `README.md` in the `truetype/fonts` directory for example fonts. Returns the width of the string as printed in pixels.
 
         The `font2bitmap` utility creates compatible 1 bit per pixel bitmap modules from Proportional or Monospaced True Type fonts. The character size, foreground, background colors and the characters to include in the bitmap module may be specified as parameters. Use the -h option for details. If you specify a buffer_size during the display initialization it must be large enough to hold the widest character (HEIGHT * MAX_WIDTH * 2).
         """
         ...
-    def write_len(self, bitap_font, s) -> int:
+    @overload
+    def write(self, bitap_font, s: int, x: int, y: int, fg: Optional[int] = None, bg: Optional[int] = None) -> None:
+        """
+        Write single character to the display using the specified proportional or Monospace bitmap font module with the coordinates as the upper-left corner of the text. The foreground and background colors of the text can be set by the optional arguments fg and bg, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`. See the `README.md` in the `truetype/fonts` directory for example fonts. Returns the width of the string as printed in pixels.
+
+        The `font2bitmap` utility creates compatible 1 bit per pixel bitmap modules from Proportional or Monospaced True Type fonts. The character size, foreground, background colors and the characters to include in the bitmap module may be specified as parameters. Use the -h option for details. If you specify a buffer_size during the display initialization it must be large enough to hold the widest character (HEIGHT * MAX_WIDTH * 2).
+        """
+        ...
+    @overload
+    def write_len(self, bitap_font, s: str) -> int:
         """
         Returns the width of the string in pixels if printed in the specified font.
         """
         ...
+    @overload
+    def write_len(self, bitap_font, s: int) -> int:
+        """
+        Returns the width of the single character in pixels if printed in the specified font.
+        """
+        ...
+    @overload
     def draw(self, vector_font, s: str, x: int, y: int, color: int, scale: Optional[float] = 1.0) -> None:
         """
         Draw text to the display using the specified hershey vector font with the coordinates as the lower-left corner of the text. The color of the text is controlled by color and the optional argument scale, can be used to make the font larger or smaller. See the `README.md` in the `vector/fonts` directory for example fonts and the utils directory for a font conversion program.
+        """
+        ...
+    @overload
+    def draw(self, vector_font, s: int, x: int, y: int, color: int, scale: Optional[float] = 1.0) -> None:
+        """
+        Draw single character to the display using the specified hershey vector font with the coordinates as the lower-left corner of the text. The color of the text is controlled by color and the optional argument scale, can be used to make the font larger or smaller. See the `README.md` in the `vector/fonts` directory for example fonts and the utils directory for a font conversion program.
         """
         ...
     def jpg(self, jpg_filename: str, x: int, y:int, method: Optional[int] = FAST) -> None:
@@ -170,6 +234,37 @@ class GC9A01:
         7        | 270 degrees mirrored
         """
         ...
+    def offset(self, xstart: int, ystart: int) -> None:
+        """
+        Offsets the origin point
+        """
+        ...
+    def vscrdef(self, tfa: int, vsa: int, bfa: int) -> None:
+        """
+        Set Vertical Scrolling Definition.
+
+        To scroll a 135x240 display these values should be 40, 240, 40.
+        There are 40 lines above the display that are not shown followed by
+        240 lines that are shown followed by 40 more lines that are not shown.
+        You could write to these areas off display and scroll them into view by
+        changing the TFA, VSA and BFA values.
+
+        - `tfa` Top Fixed Area
+        - `vsa` Vertical Scrolling Area
+        - `bfa` Bottom Fixed Area
+        """
+        ...
+    def vscsad(self, vssa: int) -> None:
+        """
+        Set Vertical Scroll Start Address of RAM.
+
+        Defines which line in the Frame Memory will be written as the first
+        line after the last line of the Top Fixed Area on the display
+
+        - `vssa` Vertical Scrolling Start Address
+        """
+        ...
+
 
 def color565(r: int, g: int, b: int) -> int:
     """
