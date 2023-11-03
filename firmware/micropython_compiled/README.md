@@ -1,4 +1,4 @@
-Firmware images for the Micropython builds for the badge.
+Firmware images for the Micropython builds for the badge.  These are just the Micropython, none of our badge code.
 
 Note these come in Pico and Pico_W flavors.  Choose wisely.
 
