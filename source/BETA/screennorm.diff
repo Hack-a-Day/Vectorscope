@@ -1,0 +1,20 @@
+16,18d15
+<     def _spi_init(self):
+<         self._spi = SPI(0, baudrate=40000000, sck=Pin(2, Pin.OUT), mosi=Pin(3, Pin.OUT), miso=Pin(20,Pin.IN))
+< 
+24c21
+<         self._spi_init()
+---
+>         self._spi = SPI(0, baudrate=40000000, sck=Pin(2, Pin.OUT), mosi=Pin(3, Pin.OUT), miso=Pin(20,Pin.IN))
+46c43
+<         self._spi_init()
+---
+>         
+62d58
+<         self.spi=None
+64d59
+<         gc.collect()
+78c73
+<     def text(self,x,y,txt,fg_color=gc9a01.color565(45, 217, 80),bg_color=gc9a01.color565(0,25,10)):
+---
+>     def text(self,x,y,txt,fg_color=gc9a01.color565(45, 217, 80),bg_color=gc9a01.color565(10,15,10)):
