@@ -1,0 +1,42 @@
+11a12
+> from vectorscope import Vectorscope
+14,15c15
+< 
+< _VERSION=20231101
+---
+> _VERSION=20231001
+24c24
+<     This function runs a loop that sleeps for 5 seconds and then collects garbage.
+---
+>     This function runs a loop that sleeps for 2 seconds and then collects garbage.
+28c28
+<         await asyncio.sleep_ms(gc_thread_rate)
+---
+>         await asyncio.sleep(2)
+90,93c90,93
+<         
+<      Returns:
+<             Task: The created task.
+<      """
+---
+> 
+>     Returns:
+>            Task: The created task.
+>     """
+124,126c124,125
+<     from vectorscope import Vectorscope
+<     _screen.clear()
+<     _screen.idle()
+---
+>     import vectorscope
+>     get_screen().idle()
+129d127
+<     vos_state.show_menu=False 
+133c131
+<     v = Vectorscope(screen_running=True)
+---
+>     v = Vectorscope(screen_running = True)
+143c141
+< #        await asyncio.sleep(5)
+---
+>   #      await asyncio.sleep(5)
