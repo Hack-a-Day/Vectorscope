@@ -35,6 +35,7 @@ def toggle_sound(arg):
 # the main vector scope demo
 def run_lissajous(arg):
     vos_state.show_menu=False
+    vos_state.gc_suspend = True
     vectoros.launch_task('lissajous')  
     # we never come back, vectorscope
     return EXIT
