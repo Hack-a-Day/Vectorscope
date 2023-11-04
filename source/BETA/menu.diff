@@ -1,0 +1,17 @@
+9c9
+< from vos_state import vos_state
+---
+> 
+89c89
+<         self.scale=1.0
+---
+>         self.scale=1
+280,284c280,281
+< # launch a tag (global, use in menus)
+< def launch(tag):
+<     vos_state.show_menu=False     # get the menu of the way
+<     vectoros.launch_task(tag)
+<     return EXIT
+---
+> 
+> 
