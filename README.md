@@ -50,7 +50,7 @@ There is also a WiP (Work in Progress) version of the [board file i KiCad format
 If you want to build you own based on the Gerbers here some notes:
 - T1 needs to be solderd flipped (deadbug) and rotated. Like in this image. You see the backside of the Fet. Pins need to get bend a little bit.
 
-<img src="hardware/bugfixT1.jpg" alt="bugFixT1" style="width:200px;"/>
+<img src="hardware/bugfixT1.jpeg" alt="bugFixT1" style="width:200px;"/>
 
 
 ### Inspiration
