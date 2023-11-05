@@ -61,7 +61,9 @@ def set_reseed(key):
 # in this case, we randomly generate it in do_reseed
 
 async def vos_main():
-    global pop
+    global pop, screen
+    if screen==None:
+        screen=vectoros.get_screen()
     N=range(20)
     key=keyboardcb.KeyboardCB({keyleds.KEY_MENU: do_exit,
                                keyleds.KEY_RANGE: set_reseed})
