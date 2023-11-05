@@ -8,6 +8,9 @@ import random
 import keyleds
 
 
+# Use RANGE key to reset to random start state
+# Menu exits
+
 screen=None
 pop=0
 _exit=False
@@ -20,7 +23,7 @@ def line(n, string):
     corner=30
     if n==0:
        gc.collect()
-       screen.clear(0)
+ #      screen.clear(0)
        pop=0
     x=corner
     y=pixsize*n+corner
@@ -28,6 +31,8 @@ def line(n, string):
         if c=='*':
             screen.tft.fill_rect(x,y,pixsize,pixsize,colors.PHOSPHOR_DARK)
             pop+=1
+        else:
+            screen.tft.fill_rect(x,y,pixsize,pixsize,colors.BLACK)
         x+=pixsize
 
 
