@@ -13,12 +13,15 @@ class ScreenNorm:
         tft (gc9a01.GC9A01): The TFT display.
     """
     
+    def _spi_init(self):
+        self._spi = SPI(0, baudrate=40000000, sck=Pin(2, Pin.OUT), mosi=Pin(3, Pin.OUT), miso=Pin(20,Pin.IN))
+
     def __init__(self):
         """
         The constructor for ScreenNorm class.
         """
         
-        self._spi = SPI(0, baudrate=40000000, sck=Pin(2, Pin.OUT), mosi=Pin(3, Pin.OUT), miso=Pin(20,Pin.IN))
+        self._spi_init()
         self.wake()
 
     def get_font(self):
@@ -40,7 +43,7 @@ class ScreenNorm:
         """
         Method to wake up the display.
         """
-        
+        self._spi_init()
         self.tft = gc9a01.GC9A01(self._spi, 240, 240,
             reset=Pin(4, Pin.OUT),
             cs=Pin(26, Pin.OUT),  
@@ -56,7 +59,9 @@ class ScreenNorm:
         """
         
         self._spi.deinit()
+        self.spi=None
         self.tft=None
+        gc.collect()
 
     def jpg(self,filename):
         """
@@ -70,7 +75,7 @@ class ScreenNorm:
             gc.collect()   
             self.tft.jpg(filename,0,0,1)
 
-    def text(self,x,y,txt,fg_color=gc9a01.color565(45, 217, 80),bg_color=gc9a01.color565(10,15,10)):
+    def text(self,x,y,txt,fg_color=gc9a01.color565(45, 217, 80),bg_color=gc9a01.color565(0,25,10)):
         """
         Method to draw text on the display.
 

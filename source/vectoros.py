@@ -9,10 +9,10 @@ import gc
 from machine import RTC
 from machine import reset as m_reset, soft_reset as m_soft_reset
 import vos_debug
-from vectorscope import Vectorscope
 
 
-_VERSION=20231001
+
+_VERSION=20231101
 
 _screen=screennorm.ScreenNorm()
 
@@ -21,11 +21,11 @@ async def _sleeper():
     """
     Asynchronous function to sleep forever.
 
-    This function runs a loop that sleeps for 2 seconds and then collects garbage.
+    This function runs a loop that sleeps for 5 seconds and then collects garbage.
     """
     
     while True:
-        await asyncio.sleep(2)
+        await asyncio.sleep_ms(gc_thread_rate)
         if vos_state.gc_suspend==False:
             gc.collect()
 
@@ -87,10 +87,10 @@ async def launch(task_tag):
 
     Args:
         task_tag (str): The tag of the program to launch.
-
-    Returns:
-           Task: The created task.
-    """
+        
+     Returns:
+            Task: The created task.
+     """
     if vos_state.gc_suspend==False:
          gc.collect()
     vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,f"launching {task_tag}")
@@ -121,14 +121,16 @@ def launch_task(task_tag):
      
      
 async def launch_vecslot(slot):
-    import vectorscope
-    get_screen().idle()
+    from vectorscope import Vectorscope
+    _screen.clear()
+    _screen.idle()
     gc.collect()
     vos_state.gc_suspend=True
+    vos_state.show_menu=False 
     vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,f"Launching slot {slot}:{vectorscope_slots[slot]}")
     mod=__import__(vectorscope_slots[slot])
     fn=getattr(mod,'slot_main')
-    v = Vectorscope(screen_running = True)
+    v = Vectorscope(screen_running=True)
     try:
         vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,"launching")
         await fn(v)
@@ -138,7 +140,7 @@ async def launch_vecslot(slot):
         print("launch exception",e)
     finally:
         vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,"Slot done, reboot!")
-  #      await asyncio.sleep(5)
+#        await asyncio.sleep(5)
         reset()
     
     

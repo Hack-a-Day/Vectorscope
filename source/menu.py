@@ -6,7 +6,7 @@ import asyncio
 import gc9a01
 import vectoros
 import vos_debug
-
+from vos_state import vos_state
 
 
 
@@ -86,7 +86,7 @@ class Menu:
             self.cbg=cursor_bg
         self.update_callback=None
         self.font=None
-        self.scale=1
+        self.scale=1.0
 
     def __enter__(self):
         return self
@@ -277,6 +277,9 @@ class Menu:
             self.joy.detach()
 
             
-
-
+# launch a tag (global, use in menus)
+def launch(tag):
+    vos_state.show_menu=False     # get the menu of the way
+    vectoros.launch_task(tag)
+    return EXIT
         

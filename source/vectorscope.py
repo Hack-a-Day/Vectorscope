@@ -93,6 +93,7 @@ class Vectorscope():
     def deinit(self):
 
         self.kill_phosphor = True
+        time.sleep_ms(10)
         machine.freq(125_000_000)
 
         self.pixel_pusher.deinit()
