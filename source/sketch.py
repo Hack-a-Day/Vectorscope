@@ -5,6 +5,7 @@ import joystick
 import vectoros
 from vos_state import vos_state
 import gc9a01
+import gc   # need to read files so we can garbage collect between
 
 # little etch-a-sketch demo
 
@@ -31,6 +32,32 @@ def fill_model(c):
     global model
     model=[[c for i in range(SIZE)] for j in range(SIZE)]
 
+def save_model(filename):
+    global model
+    try:
+        with open(filename, 'w') as f:
+            gc.collect()
+            for row in model:
+                f.write(' '.join(map(str, row)) + '\n')
+                gc.collect()
+        return True
+    except:
+        return False
+
+def load_model(filename):
+    global model
+    model=[]
+    gc.collect()
+    try:
+        with open(filename, 'r') as f:
+            for line in f:
+                numbers=line.split()
+                gc.collect()
+                model.append([int(x) for x in numbers])
+        cursor()
+        return True
+    except:
+        return False
 
 
 # update screen and overlay cursor (or just cursor area if blit==False)
@@ -43,6 +70,9 @@ def cursor(blit=True):
     ccolor=gc9a01.color565(0xC0,0xFF,0x80)
     if pendown:
         ccolor=gc9a01.color565(0xFF,0x80,0x80)
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds and not keyleds.LED_SCOPE) or keyleds.LED_SIG
+    else:
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds and not keyleds.LED_SIG) or keyleds.LED_SCOPE
     if blit:
         for x in range(SIZE):
             for y in range(SIZE):
@@ -100,19 +130,44 @@ def joycmd(key):
 # command keys (A=Black, B=Red, C=Green, D=Blue, User=Clear)
 def red(key):
     global color
-    color=gc9a01.RED
+    if keyleds.KEY_SAVE in keyboardcb.KeyboardCB.current_keys:
+        save_model("B.sketch")
+    elif keyleds.KEY_USER in keyboardcb.KeyboardCB.current_keys:
+        load_model("B.sketch")
+    else:
+        color=gc9a01.RED
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds&03) or keyleds.LED_SQ
     
 def green(key):
     global color
-    color=gc9a01.GREEN
+    if keyleds.KEY_SAVE in keyboardcb.KeyboardCB.current_keys:
+        save_model("C.sketch")
+    elif keyleds.KEY_USER in keyboardcb.KeyboardCB.current_keys:
+        load_model("C.sketch")
+    else:
+        color=gc9a01.GREEN
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds&03) or keyleds.LED_SAW
     
 def blue(key):
     global color
-    color=gc9a01.BLUE 
+    if keyleds.KEY_SAVE in keyboardcb.KeyboardCB.current_keys:
+        save_model("D.sketch")
+    elif keyleds.KEY_USER in keyboardcb.KeyboardCB.current_keys:
+        load_model("D.sketch")
+    else:    
+        color=gc9a01.BLUE
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds&03) or keyleds.LED_TRI
     
 def black(key): 
-    global color
-    color=gc9a01.BLACK
+    global color,model
+    if keyleds.KEY_SAVE in keyboardcb.KeyboardCB.current_keys:
+        save_model("A.sketch")
+    elif keyleds.KEY_USER in keyboardcb.KeyboardCB.current_keys:
+        load_model("A.sketch")
+    else:    
+        color=gc9a01.BLACK
+        keyboardcb.KeyboardCB.leds=(keyboardcb.KeyboardCB.leds&03) or keyleds.LED_SINE
+
 def white(key):   # erase
     global color
     color=gc9a01.WHITE
@@ -166,4 +221,4 @@ def main():
     asyncio.run(vos_main())
 
 if __name__ == "__main__":
-    main()
+    main()   # need gc if you try to run stand alone
