@@ -1,7 +1,6 @@
 import joystick
 from menu import *   # bad habit but makes our menu definition nice
 from vos_state import vos_state
-import blinker
 import vectoros
 import colors
 import gc 
