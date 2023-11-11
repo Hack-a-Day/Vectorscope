@@ -1,4 +1,6 @@
 # A little slideshow you can customize
+## Images need to be in true color / jpg
+## Example conversion: convert Death_Star.jpg -resize 240x240 -type TrueColor thats_no_moon.jpg
 
 import screennorm
 import keyboardcb
@@ -38,6 +40,7 @@ slides=[
         [ IMAGE, "pl_uranus.jpg" ],
         [ IMAGE, "pl_neptune.jpg" ],
         [ IMAGE, "pl_pluto.jpg" ],
+        [ IMAGE, "pl_thats_no_moon.jpg" ]
        ]
 
 # get next slide
@@ -48,6 +51,7 @@ def next():
         return  # nothing doing
     cmdlist=slides[current_slide]
     if cmdlist[0]==IMAGE or cmdlist[0]==BACKGROUND:
+        print(cmdlist[1])
         screen.jpg(cmdlist[1])
     if cmdlist[0]==BACKGROUND:
         bkflag=True
