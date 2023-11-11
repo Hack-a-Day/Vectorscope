@@ -47,6 +47,12 @@ The design is done in Altium Circuit Maker and in addition to the [board file](h
 
 There is also a WiP (Work in Progress) version of the [board file i KiCad format](hardware/vectorscope/vectorscope.kicad_pcb?raw=true). It's not perfect as some of the conversion didn't go perfect (eg. incorrect ground plane size and connections), but for mechanical use (eg. case design) it should be OK, though not all 3D models are available in the default KiCad repository.
 
+If you want to build you own based on the Gerbers here some notes:
+- T1 needs to be solderd flipped (deadbug) and rotated. Like in this image. You see the backside of the Fet. Pins need to get bend a little bit.
+
+<img src="hardware/bugfixT1.jpeg" alt="bugFixT1" style="width:200px;"/>
+
+
 ### Inspiration
 
 We'd been thinking of doing something analog this year, because we've been heavily digital with the [2019 FPGA badge](https://hackaday.com/2019/11/04/gigantic-fpga-in-a-game-boy-form-factor-2019-supercon-badge-is-a-hardware-siren-song/) and [last year's virtual retrocomputer](https://hackaday.com/2022/10/12/the-2022-supercon-badge-is-a-handheld-trip-through-computing-history/).  [Sebastian Holzapfel]'s [Eurorack FPGA frontend](https://hackaday.com/2023/02/13/an-open-hardware-eurorack-compatible-audio-fpga-front-end/) showed us how to abuse the AK4619 ADC/DAC chip for DC voltage purposes, and our path was clearer still.  
