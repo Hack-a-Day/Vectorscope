@@ -1,4 +1,4 @@
-Here you'll find some `uf2` images that you can copy directly to the badge when it's mounted in bootloader / USB-disk mode.
+Here you'll find some `uf2` images that you can copy directly to the badge when it's mounted in bootloader / USB-disk mode.  (Hold the Pico's boot button while plugging in.)
 
 The images in micropython_compiled/ are a preview version of v1.22.0, with a driver for the GC9A01 screen and pull release for DMA support compiled in.  This is here really just in case you want to play around, or if you've soldered on a Pico W, which requires its own firmware.
 
