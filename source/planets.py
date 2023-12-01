@@ -102,6 +102,7 @@ def joycb(key):
         update_timer()
     if (key==keyleds.JOY_RT):
         oldpause=pauseflag
+        update_timer()    # reset auto-advance timer
         pauseflag=False   # make sure it redraws
         next()
         pauseflag=oldpause
