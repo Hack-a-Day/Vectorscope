@@ -65,7 +65,7 @@ async def vos_main():
     machine.Pin(22, machine.Pin.OUT).toggle()
     
     screen=vectoros.get_screen()
-    splashes = ["splash_x.jpg", "splash_7.jpg", "splash_wrencher.jpg"]
+    splashes = ["splash_europe.jpg", "splash_2024.jpg", "splash_wrencher.jpg"]
     screen.jpg(random.choice(splashes))
     await asyncio.sleep_ms(1000)
 

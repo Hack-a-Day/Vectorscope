@@ -1,0 +1,19 @@
+#!/bin/bash
+while true
+do
+	if [ -e /dev/ttyACM0 ] 
+	then
+		echo "Flashing"
+		mpremote cp supercon_menu.py :
+		mpremote cp splash_2024.jpg :
+		mpremote cp splash_europe.jpg :
+		mpremote reset
+		echo "Done"
+		sleep 8
+	fi
+	while [ -d /dev/ttyACM0 ]
+	do
+		true
+	done
+done
+
