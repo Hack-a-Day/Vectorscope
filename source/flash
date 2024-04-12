@@ -8,12 +8,18 @@ do
 		mpremote cp splash_2024.jpg :
 		mpremote cp splash_europe.jpg :
 		mpremote reset
-		echo "Done"
-		sleep 8
+		echo "###############################################"
+		echo "## Thank you for using the Hackaday Flasher! ##"
+		echo "###############################################"
+		echo ""
+		## wait for device to reattach tty
+		sleep 1
+		## twirl in loop until it gets pulled again
+		echo "Waiting for the next badge..."
+		while [ -e /dev/ttyACM0 ]
+		do
+			true
+		done
 	fi
-	while [ -d /dev/ttyACM0 ]
-	do
-		true
-	done
 done
 
