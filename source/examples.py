@@ -54,7 +54,7 @@ def random_walk_example(v):
     ## Example with a class, makes it tweakable on the command line
     ## because half the fun here is live coding and experimentation
 
-    r = RW(v.wave)
+    r = RW(v)
     # print(dir(r))
     r.scale = 1000
     r.delay = 5
