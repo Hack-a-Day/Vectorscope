@@ -21,7 +21,7 @@ class Vectorscope():
     def __init__(self, screen_running = False):
        
         ## Couple buttons if you want to play with them
-        self.audio_shutdown_pin = machine.Pin(pin_defs.audio_shutdown, machine.Pin.OUT, value=1)
+        # self.audio_shutdown_pin = machine.Pin(pin_defs.audio_shutdown, machine.Pin.OUT, value=1)
         self.user_button        = machine.Pin(pin_defs.user_button, machine.Pin.IN)
         
         ## Turn up the heat!

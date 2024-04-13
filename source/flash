@@ -1,12 +1,14 @@
 #!/bin/bash
 while true
 do
+	sleep 1
 	if [ -e /dev/ttyACM0 ] 
 	then
 		echo "Flashing"
 		mpremote cp supercon_menu.py :
 		mpremote cp splash_2024.jpg :
 		mpremote cp splash_europe.jpg :
+		mpremote cp vectorscope.py :
 		mpremote reset
 		echo "###############################################"
 		echo "## Thank you for using the Hackaday Flasher! ##"
@@ -18,6 +20,7 @@ do
 		echo "Waiting for the next badge..."
 		while [ -e /dev/ttyACM0 ]
 		do
+			sleep 1
 			true
 		done
 	fi
