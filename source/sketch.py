@@ -128,6 +128,14 @@ def joycmd(key):
         cursor(False)
 
 # command keys (A=Black, B=Red, C=Green, D=Blue, User=Clear)
+
+def pixit(key):   # Set one Pixel
+    global color
+#    color=gc9a01.WHITE
+    model[cursor_x][cursor_y]=color
+    cursor(False)
+
+
 def red(key):
     global color
     if keyleds.KEY_SAVE in keyboardcb.KeyboardCB.current_keys:
@@ -190,7 +198,7 @@ screen=screennorm.ScreenNorm()
 joy=joystick.Joystick(joycmd,attach=False)
 btn=keyboardcb.KeyboardCB(joybtn,keyleds.JOY_PRESS,attach=False)  # no repeat
 csel=keyboardcb.KeyboardCB({ keyleds.KEY_LEVEL: white, keyleds.KEY_A: black,
-                             keyleds.KEY_B: red, keyleds.KEY_C: green, keyleds.KEY_D: blue, keyleds.KEY_USER: cls,
+                             keyleds.KEY_B: red, keyleds.KEY_C: green, keyleds.KEY_D: blue, keyleds.KEY_USER: cls,keyleds.KEY_RANGE: pixit,
                              keyleds.KEY_MENU: menu},
                            attach=False)
                              
