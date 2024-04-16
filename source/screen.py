@@ -30,7 +30,7 @@ class Screen():
                             cs        = Pin(pin_defs.throwaway, Pin.OUT), ## not used, grounded on board
                             dc        = self.dc,
                             backlight = Pin(pin_defs.throwaway, Pin.OUT), ## not used, always on
-                            rotation  = 0)
+                            rotation  = 6)
         self.tft.init()   
         self.tft.fill(gc9a01.color565(10,15,10))
 
