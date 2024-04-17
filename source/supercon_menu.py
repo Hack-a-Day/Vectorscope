@@ -19,12 +19,10 @@ def planets(arg):
     vectoros.launch_task('planets')  # launch
     return EXIT
 
-def menu_custom(the_menu):
-    if the_menu.level==1:
-        if machine.Pin(22).value():
-            the_menu.current[2]=[" Sound Off",toggle_sound,0]
-        else:
-            the_menu.current[2]=[" Sound On",toggle_sound,1]
+
+def dynamic_sound_text():
+    return " Sound Off" if machine.Pin(22).value() else " Sound On"
+
 
 def toggle_sound(arg):
     ## toggle sound here
@@ -77,16 +75,20 @@ async def vos_main():
         with Menu(clear_after=True,fg_color=colors.PHOSPHOR_DARK,bg_color=colors.PHOSPHOR_BG,
                   cursor_bg=colors.PHOSPHOR_BG, cursor_fg=colors.PHOSPHOR_BRIGHT) as amenu:  
             ## name in menu, command to run, return value?
-            submenu=[["  Planets", planets, 0],["  Sketch",runsketch,0],["  Back",m_exit,None]]
-            mainmenu=[[" Lissajous", run_lissajous,None],
-                      [" Demos", SUBMENU, submenu] ,
-                      [" Sound", toggle_sound, None],
-                      [" Reboot",reboot,False],
-                      ]
+            submenu = [
+                ["  Planets", planets, 0],
+                ["  Sketch", runsketch, 0],
+                ["  Back", m_exit, None],
+            ]
+            mainmenu = [
+                [" Lissajous", run_lissajous, None],
+                [" Demos", SUBMENU, submenu],
+                [dynamic_sound_text, toggle_sound, None],
+                [" Reboot", reboot, False],
+            ]
 
-# comment next line for default font
+            # comment next line for default font
             amenu.set_font("*")   # set default vector font
-            amenu.set_callback(menu_custom)
             await amenu.do_menu(mainmenu)
         vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,f"Menu waiting {vos_state.show_menu}")
         while vos_state.show_menu==False:   # wait until we have to be seen again
