@@ -81,7 +81,7 @@ async def launch_repl():
         
         vos_state.task_dict['$repl']=asyncio.create_task(aiorepl.task())
 
-async def launch(task_tag):
+async def launch(task_tag, *args, **kwargs):
     """
     Asynchronous function to launch a program by its tag.
 
@@ -90,36 +90,43 @@ async def launch(task_tag):
         
      Returns:
             Task: The created task.
-     """
-    if vos_state.gc_suspend==False:
+    """
+
+    if vos_state.gc_suspend == False:
          gc.collect()
-    vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO,f"launching {task_tag}")
-    mod=__import__(launch_list[task_tag])
+    vos_debug.debug_print(vos_debug.DEBUG_LEVEL_INFO, f"launching {task_tag}")
+    mod = __import__(launch_list[task_tag])
     try:
-        fn=getattr(mod,'vos_main')
+        fn = getattr(mod,'vos_main')
     except Exception:
-        vos_debug.debug_print(vos_debug.DEBUG_LEVEL_WARNING,f"launch could not find vos_main for {task_tag}. Trying main()")
-        fn=getattr(mod,'main')
+        vos_debug.debug_print(
+            vos_debug.DEBUG_LEVEL_WARNING,
+            f"launch could not find vos_main for {task_tag}. Trying main()",
+        )
+        fn = getattr(mod,'main')
     try:
-        await fn()
-    except TypeError:
+        await fn(*args, **kwargs)
+    except TypeError as e:
+        print(f"Exception lauching task {task_tag}:", e)
         pass
 
         
 
-def launch_task(task_tag):
-     """
-     Function to create async task to launch.
+def launch_task(task_tag, *args, **kwargs):
+    """
+    Function to create async task to launch.
 
-     Args:
-         task_tag (str): The tag of the program to launch.
-         
-      Returns:
-            Task: The created task.
-      """
-     vos_state.task_dict[task_tag]=asyncio.create_task(launch(task_tag))
-     
-     
+    Args:
+        task_tag (str): The tag of the program to launch.
+
+     Returns:
+           Task: The created task.
+    """
+
+    vos_state.task_dict[task_tag] = asyncio.create_task(
+        launch(task_tag, *args, **kwargs))
+
+
 async def launch_vecslot(slot):
     from vectorscope import Vectorscope
     _screen.clear()
