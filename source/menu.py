@@ -16,6 +16,8 @@ BACK=-1
 EXIT=1
 CONT=0
 
+TEXT, CMD, ARG = range(3)
+
 SUBMENU=[]
 
 def m_back(arg):
@@ -165,11 +167,17 @@ class Menu:
                  xfg=self.fg
                  xbg=self.bg
              
+             text = self.current[self.dispmenu + i][TEXT]
+
+             if callable(text):
+                 text = text()
+
              # screen.tft.fill_rect(24,40*(i+1),195,40,xbg)
              if self.font==None:
-                 screen.text(24,40*(i+1),self.current[self.dispmenu+i][0],xfg,xbg)
+                 screen.text(24, 40 * (i + 1), text, xfg, xbg)
              else:
-                 screen.text_font(self.font,24,40*(i+1)+20,self.current[self.dispmenu+i][0],xfg,self.scale)
+                 screen.text_font(self.font, 24, 40 * (i + 1) + 20, text, xfg,
+                                  self.scale)
 
 
 
